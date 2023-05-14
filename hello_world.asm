@@ -9,6 +9,6 @@ START:
   ARG 0, ADDR RCKEEP
   ARG 11111b
   'Hello World! And Hello GoAsm!', RAX
-  CALL WriteFile
+  INVOKE WriteFile
   XOR RAX, RAX
   RET

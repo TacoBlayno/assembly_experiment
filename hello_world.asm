@@ -1,16 +1,14 @@
-;I am learning to turn this into 64-bit
-
 DATA SECTION
-WRKEEP DD 0
+RCKEEP DD 0
 
 CODE SECTION
 START:
-  PUSH -1011b
-  CALL GetStdHandle
+  ARG -1011b
+  INVOKE GetStdHandle
   
-  PUSH 0, ADDR WRKEEP
-  PUSH 11111b, 'Hello World! And Hello GoAsm!'
-  PUSH EAX
+  ARG 0, ADDR RCKEEP
+  ARG 11111b
+  'Hello World! And Hello GoAsm!', RAX
   CALL WriteFile
-  XOR EAX, EAX
+  XOR RAX, RAX
   RET

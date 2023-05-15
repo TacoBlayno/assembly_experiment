@@ -4,8 +4,7 @@ RCKEEP DD 0
 CODE SECTION
 START:
   PUSH -1011b
-  PSUH GetStdHandle
-  
+  PUSH GetStdHandle
   PUSH 0, ADDR RCKEEP
   PUSH 11111b, 'Hello World! And Hello GoAsm!',
   PUSH EAX

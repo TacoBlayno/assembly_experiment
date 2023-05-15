@@ -3,12 +3,12 @@ RCKEEP DD 0
 
 CODE SECTION
 START:
-  ARG -1011b
-  INVOKE GetStdHandle
+  PUSH -1011b
+  PSUH GetStdHandle
   
-  ARG 0, ADDR RCKEEP
-  ARG 11111b
-  'Hello World! And Hello GoAsm!', RAX
-  INVOKE WriteFile
-  XOR RAX, RAX
+  PUSH 0, ADDR RCKEEP
+  PUSH 11111b, 'Hello World! And Hello GoAsm!',
+  PUSH EAX
+  CALL WriteFile
+  XOR EAX, EAX
   RET
